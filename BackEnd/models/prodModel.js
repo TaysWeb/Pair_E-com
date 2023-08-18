@@ -1,5 +1,6 @@
 // import connection
-import db from "../config/database.js";
+// import db from "../config/db.js";
+const db = require('../config/index');
   
 // Get All Products
 export const getProducts = (result) => {

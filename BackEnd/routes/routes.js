@@ -1,8 +1,8 @@
 // import express
-import express from "express";
+const express = require("express");
   
 // import function from controller
-import { showProducts, showProductById, createProduct, updateProduct, deleteProduct } from "../controllers/product.js";
+const { showProducts, showProductById, createProduct, updateProduct, deleteProduct } = require("../controllers/products.js");
   
 // init express router
 const router = express.Router();
