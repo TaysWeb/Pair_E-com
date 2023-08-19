@@ -1,7 +1,7 @@
 
 // import express
-import express from "express" 
-// const express = require('express');
+import express  from "express";
+
 // import cors
 import cors from  "cors" ;
  
@@ -14,7 +14,7 @@ import Router  from  "./routes/routes.js";
 // import  path from 'path' ;
   
 // init express
-const app = express;
+const app = express();
   
 // use express json
 app.use(express.json());
@@ -25,6 +25,9 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
   
+app.get('/', function(req, res){
+    res.json({ message: 'Welcome to restaurant api' });
+});
 // use router
 app.use(Router);
   
