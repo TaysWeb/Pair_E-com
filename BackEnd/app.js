@@ -1,16 +1,20 @@
 
 // import express
-import express from "express";
+import express from "express" 
+// const express = require('express');
 // import cors
-import cors from "cors";
+import cors from  "cors" ;
  
-import bodyParser from "body-parser";
+import bodyParser from  "body-parser" ;
  
 // import routes
-import Router from "./routes/routes.js";
+import Router  from  "./routes/routes.js";
+
+// const express = require('express') ;
+// import  path from 'path' ;
   
 // init express
-const app = express();
+const app = express;
   
 // use express json
 app.use(express.json());
