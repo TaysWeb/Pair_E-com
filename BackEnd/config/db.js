@@ -8,4 +8,6 @@ const db = mysql.createConnection({
   database: 'demo_db'
 });
   
+
+
 export default db;
