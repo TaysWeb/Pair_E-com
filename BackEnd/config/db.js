@@ -1,5 +1,5 @@
 import {createPool} from 'mysql2';
-
+import "dotenv/config"
    
 // create the connection to database
 const db = createPool({

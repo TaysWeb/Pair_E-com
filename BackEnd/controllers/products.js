@@ -31,6 +31,7 @@ export const createProduct = (req, res) => {
             res.send(err);
         }else{
             res.json(results);
+            console.log("record added to database successfully");
         }
     });
 }
@@ -44,6 +45,7 @@ export const updateProduct = (req, res) => {
             res.send(err);
         }else{
             res.json(results);
+            console.log("record has been updated  successfully");
         }
     });
 }
@@ -56,6 +58,7 @@ export const deleteProduct = (req, res) => {
             res.send(err);
         }else{
             res.json(results);
+            console.log("record has been deleted from database successfully");
         }
     });
 }
