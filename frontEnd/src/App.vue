@@ -1,13 +1,16 @@
 <template>
   <Navbar/>
   <router-view/>
+  <Footer/>
 </template>
 
 <script>
 import Navbar from './components/NavComp.vue'
+import Footer from './components/FooterComp.vue'
 export default{
   components:{
-    Navbar
+    Navbar,
+    Footer
   }
 }
 </script>
@@ -19,7 +22,9 @@ export default{
   text-align: center;
   color: #2c3e50;
 }
-
+.body{
+  overflow-x: hidden;
+}
 nav {
   padding: 30px;
 }
