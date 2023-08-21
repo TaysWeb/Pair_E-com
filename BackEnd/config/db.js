@@ -1,12 +1,13 @@
-import mysql from 'mysql2';
+import {createPool} from 'mysql2';
+import "dotenv/config"
    
 // create the connection to database
-const db = mysql.createPool({
+const db = createPool({
   host: process.env.DB_HOST,
   user:  process.env.DB_USER,
   password: process.env.DB_PASS,
   database:  process.env.DB_NAME,
-  connectionLimit : 10
+  connectionLimit : 30
 });
   
 db.getConnection((err) => {

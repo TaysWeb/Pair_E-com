@@ -1,5 +1,5 @@
 // Import function from Product Model
-const { getProducts, getProductById, insertProduct, updateProductById, deleteProductById } = require("../models/prodModel.js");
+import { getProducts, getProductById, insertProduct, updateProductById, deleteProductById }  from "../models/prodModel.js";
   
 // Get All Products
 export const showProducts = (req, res) => {
@@ -31,6 +31,7 @@ export const createProduct = (req, res) => {
             res.send(err);
         }else{
             res.json(results);
+            console.log("record added to database successfully");
         }
     });
 }
@@ -44,6 +45,7 @@ export const updateProduct = (req, res) => {
             res.send(err);
         }else{
             res.json(results);
+            console.log("record has been updated  successfully");
         }
     });
 }
@@ -56,6 +58,7 @@ export const deleteProduct = (req, res) => {
             res.send(err);
         }else{
             res.json(results);
+            console.log("record has been deleted from database successfully");
         }
     });
 }
