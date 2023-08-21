@@ -2,7 +2,7 @@
     <div>
    <nav class="navbar navbar-expand-lg sticky-bottom">
       <div class="container-fluid">
-        <router-link to="/"><img src="https://i.postimg.cc/nVTBnQqG/lm.png" alt="LOGO" loading="lazy" class="logo"></router-link>
+        <router-link to="/"><img src="https://i.postimg.cc/6p9C3Sws/food-logo-removebg-preview.png" alt="LOGO" loading="lazy" class="logo"></router-link>
         <button class="navbar-toggler bg-light food" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -39,7 +39,7 @@ export default{
 <style scoped>
 .navbar{
   z-index: 2;
-color: #854D27;
+background: #854D27 !important;
 }
 nav ul li a {
   color: white; /* Change this to the desired color */
