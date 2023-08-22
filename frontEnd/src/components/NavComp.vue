@@ -8,19 +8,19 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item">
+            <li class="nav-item m-2">
               <router-link to="/">Home</router-link>
             </li>
-            <li class="nav-item">
+            <li class="nav-item m-2">
               <router-link to="/about">About</router-link>
             </li>
-            <li class="nav-item">
+            <li class="nav-item m-2">
               <router-link to="/menu">Menu</router-link>
             </li>
-            <li class="nav-item">
+            <li class="nav-item m-2">
               <router-link to="/contact">Contact</router-link>
             </li>
-            <li class="nav-item">
+            <li class="nav-item m-2">
                 <router-link to="/admin">Admin</router-link>
             </li>
            </ul>
