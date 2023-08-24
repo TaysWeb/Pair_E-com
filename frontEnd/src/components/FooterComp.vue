@@ -73,6 +73,6 @@ export default{
 
 <style scoped>
 footer {
-  background: #854D27!important;
+  background: #202020!important;
 }
 </style>

@@ -39,7 +39,7 @@ export default{
 <style scoped>
 .navbar{
   z-index: 2;
-background: #854D27 !important;
+background: #202020 !important;
 }
 nav ul li a {
   color: white; /* Change this to the desired color */

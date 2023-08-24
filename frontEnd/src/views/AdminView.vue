@@ -38,7 +38,7 @@
         <th>Action</th>
       </tr>
     </thead>
-    <tbody v-for="product in product" :key="product">
+    <tbody v-for="product of products" :key="product">
       <tr v-if="product">
         <td>{{ product.product_id}}</td>
         <td>{{ product.product_name }}</td>
@@ -59,17 +59,20 @@
         users() {
             return this.$store.state.users
         },
-        product() {
-            return this.$store.state.product
+        products() {
+            return this.$store.state.products
         }
     },
     mounted() {
-        this.$store.dispatch('fetchProduct')
+        this.$store.dispatch('fetchProducts')
         this.$store.dispatch('fetchUsers')
     },
     }
 </script>
 <style scoped>
+body{
+  overflow-x: hidden;
+}
 img{
    width: 7rem;
 }
