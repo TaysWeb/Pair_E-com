@@ -9,6 +9,7 @@ export default createStore({
     product: null,
     spinner: null,
     token: null,
+    selectedProduct: null,
     msg: null,
   },
   getters: {},
@@ -22,6 +23,9 @@ export default createStore({
     setProducts(state, products) {
       state.products = products;
       console.log(products)
+    },
+    setSelectedProduct(state, product) {
+      state.selectedProduct = product
     },
     setProduct(state, product) {
       state.product = product;
@@ -53,22 +57,6 @@ export default createStore({
         context.commit("setMsg", "an error occured");
       }
     },
-    async fetchProducts(context) {
-      try {
-        const { data } = await axios.get(`${miniURL}`);
-        context.commit("setProducts", data.results);
-      } catch (e) {
-        context.commit("setMsg", "an error occured");
-      }
-    },
-    async fetchProduct(context) {
-      try {
-        const { data } = await axios.get(`${miniURL}`);
-        context.commit("setProduct", data.results);
-      } catch (e) {
-        context.commit("setMsg", "an error occured");
-      }
-    },
     async createUser(context) {
       try{
         const { data } = await axios.post(`${miniURL}user`)
@@ -93,30 +81,34 @@ export default createStore({
         context.commit("setMsg", "an error occured");
       }
     },
-    async createProduct(context) {
+    async fetchProducts(context) {
       try{
-        const { data } = await axios.post(`${miniURL}product`)
-        context.commit("setProduct", data.results);
-      } catch (e) {
-        context.commit("setMsg", "an error occured")
+        let products = await (await fetch("https://sixth-zp4e.onrender.com/products")).json()
+        if (products) {
+          context.commit ("setProducts", products)
+        } else {
+          alert("error")
+        }
       }
-    },
-    async updateProduct(context) {
-      try{
-        const { data } = await axios.patch(`${miniURL}product`)
-        context.commit("setProduct", data.results)
-      } catch (e) {
-        context.commit("setMsg", "an error occured")
-      }
-    },
-    async deleteProduct(context) {
-      try{
-        const { data } = await axios.delete(`${miniURL}product`)
-        context.commit("setProduct", data.results);
-      } catch (e) {
-        context.commit("setMsg", "an error occured")
+      catch(e) {
+        console.error(error)
       }
     }
   },
-  modules: {},
-});
+  async addProduct(context, payload) {
+    console.log("REACHED");
+      try {
+        const { res } = await axios.post(`${miniURL}product`, payload);
+        const { results, err } = await res.data;
+        if (results) {
+          context.commit("setProduct", results[0]);
+          context.commit("setSpinner", false);
+        } else {
+          context.commit("setMsg", msg);
+        }
+      } catch (e) {
+        context.commit("setMsg", "an error occured");
+      }
+    },
+  },
+);

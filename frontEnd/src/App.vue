@@ -22,9 +22,10 @@ export default{
   text-align: center;
   color: #2c3e50;
 }
-.body{
-  overflow-x: hidden;
+body{
+  background: black !important;
 }
+
 nav {
   padding: 30px;
 }

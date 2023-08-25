@@ -27,6 +27,7 @@
     </tbody>
   </table>
 <h1>Products Table</h1>
+<AddProducts />
 <table class="table">
     <thead>
       <tr>
@@ -38,14 +39,20 @@
         <th>Action</th>
       </tr>
     </thead>
-    <tbody v-for="product in product" :key="product">
+    <tbody v-for="product of products" :key="product">
       <tr v-if="product">
         <td>{{ product.product_id}}</td>
         <td>{{ product.product_name }}</td>
         <td>{{ product.product_category }}</td>
         <td><img :src="product.product_image" :alt="product.product_name" class="img-fluid image" loading="lazy"></td>
         <td>R {{ product.product_price }}</td>
-        <td><button class="edit">edit</button><button class="del">delete</button></td>
+        <td>
+              <updateProduct :product="product" />
+              <button class="edit">edit</button>
+              <button @click="deleteProduct(product.product_id)" class="del">
+                delete
+              </button>
+            </td>
       </tr>
       <tr v-else>
       </tr>
@@ -54,22 +61,42 @@
     </div>
 </template>
 <script>
+import AddProducts from '../components/AddProduct.vue';
     export default {
+      components:{
+        AddProducts
+      },
         computed: {
-        users() {
-            return this.$store.state.users
-        },
-        product() {
-            return this.$store.state.product
-        }
+          users() {
+      return this.$store.state.users;
     },
+    product() {
+      return this.$store.state.product;
+    },
+    products(){
+      return this.$store.state.products
+    },
+    user(){
+      return this.$store.state.user
+    }
+  },
     mounted() {
-        this.$store.dispatch('fetchProduct')
+        this.$store.dispatch('fetchProducts')
         this.$store.dispatch('fetchUsers')
     },
+    methods:{
+      deleteProduct(product_id) {
+      if (confirm("Do you want to delete this product?")) {
+        this.$store.dispatch("deleteProduct", product_id);
+      }
+    },
+    }
     }
 </script>
 <style scoped>
+body{
+  overflow-x: hidden;
+}
 img{
    width: 7rem;
 }
