@@ -57,22 +57,6 @@ export default createStore({
         context.commit("setMsg", "an error occured");
       }
     },
-    // async fetchProducts(context) {
-    //   try {
-    //     const { data } = await axios.get(`${miniURL}`);
-    //     context.commit("setProducts", data.results);
-    //   } catch (e) {
-    //     context.commit("setMsg", "an error occured");
-    //   }
-    // },
-    // async fetchProduct(context) {
-    //   try {
-    //     const { data } = await axios.get(`${miniURL}`);
-    //     context.commit("setProduct", data.results);
-    //   } catch (e) {
-    //     context.commit("setMsg", "an error occured");
-    //   }
-    // },
     async createUser(context) {
       try{
         const { data } = await axios.post(`${miniURL}user`)
@@ -111,30 +95,20 @@ export default createStore({
       }
     }
   },
-    // // async createProduct(context) {
-    // //   try{
-    // //     const { data } = await axios.post(`${miniURL}`)
-    // //     context.commit("setProduct", data.results);
-    // //   } catch (e) {
-    // //     context.commit("setMsg", "an error occured")
-    // //   }
-    // // },
-    // // async updateProduct(context) {
-    // //   try{
-    // //     const { data } = await axios.patch(`${miniURL}`)
-    // //     context.commit("setProduct", data.results)
-    // //   } catch (e) {
-    // //     context.commit("setMsg", "an error occured")
-    // //   }
-    // // },
-    // async deleteProduct(context) {
-    //   try{
-    //     const { data } = await axios.delete(`${miniURL}`)
-    //     context.commit("setProduct", data.results);
-    //   } catch (e) {
-    //     context.commit("setMsg", "an error occured")
-    //   }
-    // }
+  async addProduct(context, payload) {
+    console.log("REACHED");
+      try {
+        const { res } = await axios.post(`${miniURL}product`, payload);
+        const { results, err } = await res.data;
+        if (results) {
+          context.commit("setProduct", results[0]);
+          context.commit("setSpinner", false);
+        } else {
+          context.commit("setMsg", msg);
+        }
+      } catch (e) {
+        context.commit("setMsg", "an error occured");
+      }
+    },
   },
-  
 );

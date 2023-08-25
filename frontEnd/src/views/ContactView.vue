@@ -70,7 +70,7 @@ button span:not(:nth-child(6)) {
  transform: translate(-50%, -50%);
  height: 30px;
  width: 30px;
- background-color: #95a003;
+ background-color: #DD7230;
  border-radius: 50%;
  transition: .6s ease;
 }
