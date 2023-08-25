@@ -47,9 +47,35 @@ taste with a twist.</p>
     <div class="bg-color">
       <h2 class="dees">Fetured in</h2>
     </div>
-<div class="container">
-  <div class="d-flex justify-content-center align-items-center">
-    <li></li>
+    <div class="container-fluid d-flex justify-content-center align-items-center">
+  <div class="row">
+    <div class="col-sm">
+      <div class="card d-flex justify-content-center align-items-center" style="width: 18rem;">
+  <img class="card-img-top33 img-fluid" src="https://i.postimg.cc/QM9xmJCb/3581393-200.png" alt="Card image cap">
+  <div class="card-body33">
+    <p class="card-text">tHE BEST cheeseCake
+taste with a twist.</p>
+  </div>
+</div>
+    </div>
+    <div class="col-sm">
+      <div class="card d-flex justify-content-center align-items-center" style="width: 18rem;">
+  <img class="card-img-top33 img-fluid" src="https://i.postimg.cc/rmZjTcMc/sign-of-good-food-symbol-is-isolated-on-a-white-background-icon-color-editable-free-vector.jpg" alt="Card image cap">
+  <div class="card-body33">
+    <p class="card-text">tHE BEST cheeseCake
+taste with a twist.</p>
+  </div>
+</div>
+    </div>
+    <div class="col-sm">
+      <div class="card d-flex justify-content-center align-items-center" style="width: 18rem;">
+  <img class="card-img-top33 img-fluid" src="https://i.postimg.cc/nLrbGFRf/guaranteed-customer-satisfaction-best-service-label-thumbs-up-icon-vector.jpg" alt="Card image cap">
+  <div class="card-body33">
+    <p class="card-text">tHE BEST cheeseCake
+taste with a twist.</p>
+  </div>
+</div>
+    </div>
   </div>
 </div>
   </section>
@@ -81,5 +107,8 @@ taste with a twist.</p>
 }
 .bg-color{
 
+}
+.card-img-top33{
+  aspect-ratio: 1/1;
 }
 </style>

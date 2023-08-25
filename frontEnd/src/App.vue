@@ -25,6 +25,7 @@ export default{
 body{
   background: black !important;
 }
+
 nav {
   padding: 30px;
 }
